@@ -63,7 +63,7 @@ public:
     }
 };
 
-//* Decorator to append a signature to the content.
+//** */ Decorator to append a signature to the content.
 class SignatureDecorator : public INotificationDecorator
 {
 private:
