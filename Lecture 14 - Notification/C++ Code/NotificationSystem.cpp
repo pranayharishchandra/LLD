@@ -51,7 +51,7 @@ public:
     }
 };
 
-//* */ Decorator to add a timestamp to the content.
+// */ Decorator to add a timestamp to the content.
 class TimestampDecorator : public INotificationDecorator
 {
 public:
