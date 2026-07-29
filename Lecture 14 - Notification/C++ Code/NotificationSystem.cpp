@@ -325,7 +325,7 @@ NotificationService *NotificationService::instance = nullptr;
 
 int main()
 {
-    // Create NotificationService.
+    //* Create NotificationService.
     NotificationService *notificationService = NotificationService::getInstance();
 
     // Get Observable
