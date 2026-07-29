@@ -308,7 +308,7 @@ public:
         return observable;
     }
 
-    // Creates a new Notification and notifies observers.
+    //* Creates a new Notification and notifies observers.
     void sendNotification(INotification *notification)
     {
         notifications.push_back(notification); // history
