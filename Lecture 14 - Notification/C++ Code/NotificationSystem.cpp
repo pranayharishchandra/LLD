@@ -328,7 +328,7 @@ int main()
     //* Create NotificationService.
     NotificationService *notificationService = NotificationService::getInstance();
 
-    // Get Observable
+    //* Get Observable
     NotificationObservable *notificationObservable = notificationService->getObservable();
 
     // Create Logger Observer
