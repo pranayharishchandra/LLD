@@ -10,15 +10,16 @@ class PaymentRequest {
     public String currency;
 
     public PaymentRequest(String sender, String reciever, double amt, String curr) {
-        this.sender   = sender;
+        this.sender = sender;
         this.reciever = reciever;
-        this.amount   = amt;
+        this.amount = amt;
         this.currency = curr;
     }
 }
 
 // ----------------------------
-// Banking System interface and implementations (Strategy for actual payment logic)
+// * */ Banking System interface and implementations (Strategy for actual
+// payment logic)
 // ----------------------------
 interface BankingSystem {
     boolean processPayment(double amount);
@@ -27,7 +28,8 @@ interface BankingSystem {
 class PaytmBankingSystem implements BankingSystem {
     private Random rand = new Random();
 
-    public PaytmBankingSystem() {}
+    public PaytmBankingSystem() {
+    }
 
     @Override
     public boolean processPayment(double amount) {
@@ -40,7 +42,8 @@ class PaytmBankingSystem implements BankingSystem {
 class RazorpayBankingSystem implements BankingSystem {
     private Random rand = new Random();
 
-    public RazorpayBankingSystem() {}
+    public RazorpayBankingSystem() {
+    }
 
     @Override
     public boolean processPayment(double amount) {
@@ -80,7 +83,9 @@ abstract class PaymentGateway {
 
     // Steps to be implemented by concrete gateways
     protected abstract boolean validatePayment(PaymentRequest request);
+
     protected abstract boolean initiatePayment(PaymentRequest request);
+
     protected abstract boolean confirmPayment(PaymentRequest request);
 }
 
@@ -157,7 +162,7 @@ class PaymentGatewayProxy extends PaymentGateway {
 
     public PaymentGatewayProxy(PaymentGateway gateway, int maxRetries) {
         this.realGateway = gateway;
-        this.retries     = maxRetries;
+        this.retries = maxRetries;
     }
 
     @Override
@@ -165,11 +170,12 @@ class PaymentGatewayProxy extends PaymentGateway {
         boolean result = false;
         for (int attempt = 0; attempt < retries; ++attempt) {
             if (attempt > 0) {
-                System.out.println("[Proxy] Retrying payment (attempt " + (attempt+1)
+                System.out.println("[Proxy] Retrying payment (attempt " + (attempt + 1)
                         + ") for " + request.sender + ".");
             }
             result = realGateway.processPayment(request);
-            if (result) break;
+            if (result)
+                break;
         }
         if (!result) {
             System.out.println("[Proxy] Payment failed after " + retries
@@ -205,7 +211,8 @@ enum GatewayType {
 class GatewayFactory {
     private static final GatewayFactory instance = new GatewayFactory();
 
-    private GatewayFactory() {}
+    private GatewayFactory() {
+    }
 
     public static GatewayFactory getInstance() {
         return instance;
@@ -256,7 +263,8 @@ class PaymentService {
 class PaymentController {
     private static final PaymentController instance = new PaymentController();
 
-    private PaymentController() {}
+    private PaymentController() {
+    }
 
     public static PaymentController getInstance() {
         return instance;
