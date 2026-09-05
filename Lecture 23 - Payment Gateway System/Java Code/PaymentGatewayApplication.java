@@ -20,9 +20,7 @@ class PaymentRequest {
 // -----------------------------
 // Banking System interface and implementations (Strategy for
 // actual
-// payment
-
-// logic)
+// payment logic)
 // ----------------------------
 interface BankingSystem {
     boolean processPayment(double amount);
