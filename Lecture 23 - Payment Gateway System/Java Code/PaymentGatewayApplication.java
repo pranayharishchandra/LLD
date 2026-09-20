@@ -18,7 +18,9 @@ class PaymentRequest {
 }
 
 // -----------------------------
-// Banking System interface and implementations (Strategy for actual payment
+// Banking System interface and
+// implementations
+// (Strategy for actual payment
 // logic)
 // ----------------------------
 interface BankingSystem {
