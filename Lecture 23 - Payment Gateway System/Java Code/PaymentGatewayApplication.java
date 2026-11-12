@@ -26,6 +26,8 @@ interface BankingSystem {
     boolean processPayment(double amount);
 }
 
+
+
 class PaytmBankingSystem implements BankingSystem {
     private Random rand = new Random();
 
